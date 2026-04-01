@@ -401,7 +401,11 @@
         </div>
         <div class="projects-grid">
           <!-- Project 1 -->
-          <div class="project-card reveal">
+          <div class="project-card reveal"
+            data-detail="ShopElite is a full-featured e-commerce platform built for high-traffic retail operations. It includes real-time inventory sync across multiple warehouses, Stripe & PayPal payment integration, AI-powered product recommendations, and a comprehensive admin analytics dashboard with sales forecasting."
+            data-features="Real-time Inventory Sync, Multi-gateway Payment, AI Product Recommendations, Sales Forecasting Dashboard, Multi-warehouse Support, Customer Analytics"
+            data-role="Lead Full-Stack Developer"
+            data-year="2024">
             <div class="project-image-wrapper">
               <img
                 src="assets/images/project-ecommerce.png"
@@ -429,7 +433,11 @@
           </div>
 
           <!-- Project 2 -->
-          <div class="project-card reveal">
+          <div class="project-card reveal"
+            data-detail="DataFlow Analytics is an enterprise-grade SaaS platform delivering real-time data visualization and business intelligence. It features custom drag-and-drop report builders, team collaboration with role-based access, automated data pipelines, and interactive dashboards that handle millions of data points."
+            data-features="Real-time Data Visualization, Drag & Drop Report Builder, Team Collaboration, Automated Pipelines, Role-based Access Control, Interactive Dashboards"
+            data-role="Full-Stack Developer"
+            data-year="2023">
             <div class="project-image-wrapper">
               <img
                 src="assets/images/project-saas.png"
@@ -457,7 +465,11 @@
           </div>
 
           <!-- Project 3 -->
-          <div class="project-card reveal">
+          <div class="project-card reveal"
+            data-detail="FitTrack Pro is a comprehensive fitness application that combines workout planning, progress tracking, and AI-powered training recommendations. Users can create custom workout routines, track calories and macros, view detailed progress charts, and receive personalized training plans based on their fitness goals."
+            data-features="Custom Workout Plans, Calorie & Macro Tracking, Progress Charts, AI Training Recommendations, Social Challenges, Wearable Integration"
+            data-role="Mobile App Developer"
+            data-year="2023">
             <div class="project-image-wrapper">
               <img
                 src="assets/images/project-fitness.png"
@@ -484,7 +496,11 @@
           </div>
 
           <!-- Project 4 -->
-          <div class="project-card reveal">
+          <div class="project-card reveal"
+            data-detail="LuxEstate is a premium real estate platform designed for luxury property listings. It features immersive 360° virtual tours, interactive map-based property search with Mapbox, built-in mortgage calculator, smart property matching using AI, and comprehensive neighborhood analytics."
+            data-features="360° Virtual Tours, Interactive Map Search, Mortgage Calculator, AI Property Matching, Neighborhood Analytics, Agent Dashboard"
+            data-role="Lead Full-Stack Developer"
+            data-year="2024">
             <div class="project-image-wrapper">
               <img
                 src="assets/images/project-realestate.png"
@@ -511,7 +527,11 @@
           </div>
 
           <!-- Project 5 -->
-          <div class="project-card reveal">
+          <div class="project-card reveal"
+            data-detail="TasteHub is a complete restaurant management and online ordering ecosystem. It includes a customer-facing ordering app with real-time GPS delivery tracking, a kitchen display system (KDS) for order management, route optimization for delivery drivers, and a management dashboard with sales and inventory analytics."
+            data-features="Online Ordering, Real-time GPS Tracking, Kitchen Display System, Route Optimization, Inventory Management, Sales Analytics"
+            data-role="Full-Stack Developer"
+            data-year="2022">
             <div class="project-image-wrapper">
               <img
                 src="assets/images/project-restaurant.png"
@@ -538,7 +558,11 @@
           </div>
 
           <!-- Project 6 -->
-          <div class="project-card reveal">
+          <div class="project-card reveal"
+            data-detail="CloudSync CRM is a custom-built customer relationship management system for sales teams. It features visual pipeline management with drag-and-drop deals, automated email workflows and follow-up reminders, integrated communication tracking (calls, emails, meetings), and real-time team performance insights with KPI dashboards."
+            data-features="Visual Pipeline Management, Automated Workflows, Communication Tracking, KPI Dashboards, Team Collaboration, Email Integration"
+            data-role="Backend Lead Developer"
+            data-year="2024">
             <div class="project-image-wrapper">
               <img
                 src="assets/images/project-saas.png"
@@ -566,6 +590,29 @@
         </div>
       </div>
     </section>
+
+    <!-- ========== PROJECT DETAIL MODAL ========== -->
+    <div class="project-modal-overlay" id="projectModal">
+      <div class="project-modal">
+        <button class="project-modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+        <div class="project-modal-image">
+          <img id="modalImage" src="" alt="" />
+        </div>
+        <div class="project-modal-body">
+          <div class="project-modal-meta">
+            <span class="modal-role" id="modalRole"></span>
+            <span class="modal-year" id="modalYear"></span>
+          </div>
+          <h2 class="project-modal-title" id="modalTitle"></h2>
+          <p class="project-modal-description" id="modalDescription"></p>
+          <div class="project-modal-features">
+            <h4>Key Features</h4>
+            <ul id="modalFeatures"></ul>
+          </div>
+          <div class="project-modal-tech" id="modalTech"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- ========== SERVICES SECTION ========== -->
     <section class="section" id="services">

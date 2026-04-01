@@ -409,6 +409,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   const heroPhotoFrame = document.querySelector(".hero-photo-frame");
   const aboutImageFrame = document.querySelector(".about-image-frame");
+  const aboutDecoration = document.querySelector(".about-image-decoration");
   const heroSection = document.getElementById("hero");
   const aboutSection = document.getElementById("about");
 
@@ -461,9 +462,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (scrollY < transStart) {
           heroPhotoFrame.style.opacity = "";
           aboutImageFrame.style.opacity = "0";
+          if (aboutDecoration) aboutDecoration.style.opacity = "0";
         } else {
           heroPhotoFrame.style.opacity = "0";
           aboutImageFrame.style.opacity = "1";
+          if (aboutDecoration) aboutDecoration.style.opacity = "1";
         }
         isTransitioning = false;
         return;
@@ -519,10 +522,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (progress <= 0.02) {
           heroPhotoFrame.style.opacity = "";
           aboutImageFrame.style.opacity = "0";
+          if (aboutDecoration) aboutDecoration.style.opacity = "0";
         }
         if (progress >= 0.98) {
           heroPhotoFrame.style.opacity = "0";
           aboutImageFrame.style.opacity = "1";
+          if (aboutDecoration) aboutDecoration.style.opacity = "1";
         }
       }
     }
@@ -532,16 +537,8 @@ document.addEventListener("DOMContentLoaded", () => {
       rafId = requestAnimationFrame(updateScrollPhoto);
     }
 
-    if (window.innerWidth > 992) {
-      window.addEventListener("scroll", onScroll, { passive: true });
-      window.addEventListener("resize", () => {
-        if (window.innerWidth <= 992) {
-          scrollPhoto.classList.add("hidden");
-          heroPhotoFrame.style.opacity = "";
-          aboutImageFrame.style.opacity = "0";
-        }
-      });
-    }
+    // Enable on all screen sizes
+    window.addEventListener("scroll", onScroll, { passive: true });
   }
 
   // ==========================================
@@ -793,5 +790,97 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("mouseleave", () => {
       btn.style.transform = "";
     });
+  });
+
+  // ==========================================
+  // 16. PROJECT DETAIL MODAL
+  // ==========================================
+  const projectModal = document.getElementById("projectModal");
+  const modalClose = document.getElementById("modalClose");
+  const modalImage = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalRole = document.getElementById("modalRole");
+  const modalYear = document.getElementById("modalYear");
+  const modalFeatures = document.getElementById("modalFeatures");
+  const modalTech = document.getElementById("modalTech");
+
+  function openProjectModal(card) {
+    // Get data from card
+    const img = card.querySelector(".project-image-wrapper img");
+    const title = card.querySelector(".project-title").textContent;
+    const detail = card.getAttribute("data-detail") || card.querySelector(".project-description").textContent;
+    const features = card.getAttribute("data-features") || "";
+    const role = card.getAttribute("data-role") || "Developer";
+    const year = card.getAttribute("data-year") || "2024";
+    const techTags = card.querySelectorAll(".tech-tag");
+
+    // Fill modal
+    modalImage.src = img.src;
+    modalImage.alt = img.alt;
+    modalTitle.textContent = title;
+    modalDescription.textContent = detail;
+    modalRole.textContent = role;
+    modalYear.textContent = year;
+
+    // Features
+    modalFeatures.innerHTML = "";
+    if (features) {
+      features.split(",").forEach((f) => {
+        const li = document.createElement("li");
+        li.textContent = f.trim();
+        modalFeatures.appendChild(li);
+      });
+    }
+
+    // Tech stack
+    modalTech.innerHTML = "";
+    techTags.forEach((tag) => {
+      const span = document.createElement("span");
+      span.className = "tech-tag";
+      span.textContent = tag.textContent;
+      modalTech.appendChild(span);
+    });
+
+    // Show modal
+    projectModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeProjectModal() {
+    projectModal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  // Click "View Project" button or entire card
+  document.querySelectorAll(".project-card").forEach((card) => {
+    const viewBtn = card.querySelector(".project-view-btn");
+    if (viewBtn) {
+      viewBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openProjectModal(card);
+      });
+    }
+    card.addEventListener("click", () => {
+      openProjectModal(card);
+    });
+    card.style.cursor = "pointer";
+  });
+
+  // Close modal
+  if (modalClose) {
+    modalClose.addEventListener("click", closeProjectModal);
+  }
+
+  if (projectModal) {
+    projectModal.addEventListener("click", (e) => {
+      if (e.target === projectModal) closeProjectModal();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && projectModal.classList.contains("active")) {
+      closeProjectModal();
+    }
   });
 });
