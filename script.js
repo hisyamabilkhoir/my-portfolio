@@ -614,6 +614,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Close button in chatbot header
+  const chatClose = document.getElementById("chatbotClose");
+  if (chatClose) {
+    chatClose.addEventListener("click", () => {
+      chatToggle.classList.remove("active");
+      chatPopup.classList.remove("open");
+    });
+  }
+
   function addMessage(text, sender) {
     const msg = document.createElement("div");
     msg.className = `chat-message ${sender}`;
