@@ -1313,7 +1313,8 @@ ul {
 }
 
 /* ---------- Skills Section ---------- */
-.skills-categories {
+.skills-categories,
+.projects-categories {
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -1321,7 +1322,8 @@ ul {
   flex-wrap: wrap;
 }
 
-.skills-category-btn {
+.skills-category-btn,
+.projects-category-btn {
   padding: 10px 24px;
   border: 1px solid var(--border-subtle);
   border-radius: 50px;
@@ -1336,7 +1338,9 @@ ul {
 }
 
 .skills-category-btn:hover,
-.skills-category-btn.active {
+.skills-category-btn.active,
+.projects-category-btn:hover,
+.projects-category-btn.active {
   background: var(--red-glow-faint);
   border-color: var(--red-primary);
   color: var(--text-primary);

@@ -399,9 +399,26 @@
           </h2>
           <div class="section-line"></div>
         </div>
+        <div class="projects-categories reveal">
+          <button class="projects-category-btn active" data-category="all">
+            All
+          </button>
+          <button class="projects-category-btn" data-category="personal">
+            Personal Branding
+          </button>
+          <button class="projects-category-btn" data-category="company">
+            Company Profile
+          </button>
+          <button class="projects-category-btn" data-category="web">
+            Web Application
+          </button>
+          <button class="projects-category-btn" data-category="mobile">
+            Mobile Application
+          </button>
+        </div>
         <div class="projects-grid">
           <!-- Project 1 -->
-          <div class="project-card reveal"
+          <div class="project-card reveal" data-category="web"
             data-detail="The AMDK Business Management Application is an integrated management system specifically designed to facilitate the operations of a bottled water business. This system provides comprehensive features ranging from inventory management, real-time monitoring of raw materials and finished products, recording of sales transactions, to integrated accounting and comprehensive cash flow reporting."
             data-features="Inventory Management, Real-time Stock Monitoring, Sales Module, Accounting System, Cash Flow Reporting, Analytics Dashboard"
             data-role="Full-Stack Developer"
@@ -431,7 +448,7 @@
           </div>
 
           <!-- Project 2 -->
-          <div class="project-card reveal"
+          <div class="project-card reveal" data-category="web"
             data-detail="The Traffic Monitoring Application is a custom system built upon the request of the Cirebon City Police Department (Polresta Cirebon) to monitor vehicle flow across various registered points on both sides of the road. Integrated with Apache Tomcat for mapping features, this system boasts intelligent traffic jam detection. When a traffic jam reaches a pre-configured kilometer threshold, the system automatically broadcasts warning notifications via Telegram and WhatsApp to registered groups and relevant officers."
             data-features="Traffic Point Monitoring, Map Integration (Tomcat Maps), Congestion Parameter Configuration, Automatic Notifications (Telegram & WhatsApp), Officer & Group Management"
             data-role="Full-Stack Developer"
@@ -461,7 +478,7 @@
           </div>
 
           <!-- Project 3 -->
-          <div class="project-card reveal"
+          <div class="project-card reveal" data-category="web"
             data-detail="The PT Lentera Accounting Application is a comprehensive financial system built to streamline the company's accounting processes. This system handles everything from daily cash flow recording and transaction tracking to automated financial statement generation and detailed Excel reporting, ensuring accuracy and efficiency in financial management."
             data-features="Cash Flow Recording, Transaction Management, Automated Financial Statements, Excel Reporting Export, Ledger Management"
             data-role="Full-Stack Developer"
@@ -491,7 +508,7 @@
           </div>
 
           <!-- Project 4 -->
-          <div class="project-card reveal"
+          <div class="project-card reveal" data-category="web"
             data-detail="Visit Cirebon is a comprehensive tourism application designed to promote the city of Cirebon. The platform provides a wide range of information including local culinary specialties, tourist attractions, accommodations, and upcoming events. Additionally, it features an integrated ticketing system that allows users to purchase tickets and receive exclusive discounts through partnerships with local vendors."
             data-features="Tourism Information Directory, Culinary & Accommodation Guide, Event Calendar, Ticketing System, Vendor Discount Integration"
             data-role="Full-Stack Developer"
@@ -521,7 +538,7 @@
           </div>
 
           <!-- Project 5 -->
-          <div class="project-card reveal"
+          <div class="project-card reveal" data-category="web"
             data-detail="Zulfaniz E-Commerce is a comprehensive online shopping platform built specifically for the Zulfaniz Muslimah Hijab brand. This application comes fully integrated with the Midtrans payment gateway to process secure online transactions. Additionally, it features a robust administrative panel for master data management, product discounts, and detailed sales reporting, ensuring a seamless shopping and management experience."
             data-features="Midtrans Payment Gateway, Master Data Management, Discount Configuration, Sales Reporting, Shopping Cart & Checkout, Admin Dashboard"
             data-role="Full-Stack Developer"
@@ -551,7 +568,7 @@
           </div>
 
           <!-- Project 6 -->
-          <div class="project-card reveal"
+          <div class="project-card reveal" data-category="web"
             data-detail="TripTracker is a versatile booking application for domestic and international travel. It is fully integrated with the Doku payment gateway for secure transactions and features automated certificate generation via certifier.io. The robust admin dashboard allows for comprehensive data management, including the handling of vouchers, package discounts, user reviews, and certificate issuance."
             data-features="Domestic & International Booking, Doku Payment Integration, Certifier.io Certificates, Voucher & Discount Management, Review System, Admin Dashboard"
             data-role="Full-Stack Developer"
@@ -579,6 +596,95 @@
               </div>
             </div>
           </div>
+
+          <!-- Project 9: Osbond Gym -->
+          <div class="project-card reveal" data-category="mobile"
+            data-detail="A comprehensive mobile and web application for Osbond Gym, handling membership and personal trainer (PT) purchases, as well as class and PT session bookings. The platform features an advanced multi-role system catering to CS, Finance, Sales, GM, Admin, Instructors, and PTs, each with tailored access. A standout feature is the highly secure dynamic QR Code check-in/out system that refreshes every 30 seconds to prevent screenshots, fully integrated with Firebase Push Notifications."
+            data-features="Membership & PT Purchasing, Class Booking, Multi-Role Access Control, Dynamic Anti-Screenshot QR Check-in, Firebase Notifications"
+            data-role="Full-Stack Developer"
+            data-year="2024">
+            <div class="project-image-wrapper">
+              <img
+                src="assets/images/osbond-mobile.png"
+                alt="Osbond Gym Mobile Application"
+                loading="lazy"
+              />
+              <div class="project-image-overlay">
+                <button class="project-view-btn">View Project</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Osbond Gym App</h3>
+              <p class="project-description">
+                A feature-rich gym application with dynamic QR check-ins, class bookings, and extensive multi-role management.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">CodeIgniter 4</span>
+                <span class="tech-tag">Angular Ionic</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8: Elmaz School Modelling -->
+          <div class="project-card reveal" data-category="company"
+            data-detail="A luxurious and elegant company profile website designed for Elmaz School Modelling. The site perfectly encapsulates their brand identity with a premium aesthetic and includes comprehensive sections for About, Programs, Articles, Events, Gallery, and Contacts. It also features seamless integrations with Google Maps and a direct WhatsApp contact form."
+            data-features="Luxury UI/UX Design, Programs Showcase, Articles & Events, Media Gallery, WhatsApp Form Integration, Google Maps Integration"
+            data-role="Front-End Developer"
+            data-year="2024">
+            <div class="project-image-wrapper">
+              <img
+                src="assets/images/elmaz-company-profile.png"
+                alt="Elmaz School Modelling Company Profile"
+                loading="lazy"
+              />
+              <div class="project-image-overlay">
+                <button class="project-view-btn">View Project</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Elmaz School Modelling</h3>
+              <p class="project-description">
+                An elegant company profile website featuring a luxurious design, comprehensive program showcases, and WhatsApp integration.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7: Annisa Esce -->
+          <div class="project-card reveal" data-category="personal"
+            data-detail="A custom-built personal branding website for content creator Annisa Esce. Developed entirely from scratch without templates using HTML, CSS, and JS for maximum performance and a fresh look. The website features light/dark mode toggling, an interactive chatbot, detailed personal portfolio sections (brand, projects, resume, contact), a live chat integration, and a contact form that routes messages directly to the owner's Gmail."
+            data-features="Light/Dark Mode, Custom Chatbot, Live Chat Integration, Direct Gmail Contact Form, No-Template Custom UI"
+            data-role="Front-End Developer"
+            data-year="2024">
+            <div class="project-image-wrapper">
+              <img
+                src="assets/images/annisa-personal-branding.png"
+                alt="Annisa Esce Personal Branding"
+                loading="lazy"
+              />
+              <div class="project-image-overlay">
+                <button class="project-view-btn">View Project</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Annisa Esce Branding</h3>
+              <p class="project-description">
+                A fast, custom-built personal branding website featuring light/dark mode, an interactive chatbot, and seamless Gmail integration.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">Vanilla JS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects-load-more" id="projectsLoadMoreContainer" style="text-align: center; margin-top: 50px; display: none;">
+          <button id="loadMoreProjectsBtn" class="btn btn-outline" style="border-radius: 50px; padding: 12px 32px; cursor: pointer;">
+            <span>Load More Projects</span>
+          </button>
         </div>
       </div>
     </section>

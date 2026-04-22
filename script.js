@@ -321,6 +321,67 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ==========================================
+  // 7b. PROJECT CATEGORY FILTER & LOAD MORE
+  // ==========================================
+  const projectBtns = document.querySelectorAll(".projects-category-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+  const loadMoreBtnContainer = document.getElementById("projectsLoadMoreContainer");
+  const loadMoreBtn = document.getElementById("loadMoreProjectsBtn");
+  
+  let currentProjectLimit = 6;
+  let currentProjectFilter = "all";
+
+  function renderProjects() {
+    let visibleCount = 0;
+    let totalMatching = 0;
+
+    projectCards.forEach((card) => {
+      const cat = card.getAttribute("data-category");
+      if (currentProjectFilter === "all" || cat === currentProjectFilter) {
+        totalMatching++;
+        if (visibleCount < currentProjectLimit) {
+          card.style.display = "";
+          card.style.animation = "fadeInUp 0.5s ease forwards";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    if (loadMoreBtnContainer) {
+      if (totalMatching > currentProjectLimit) {
+        loadMoreBtnContainer.style.display = "block";
+      } else {
+        loadMoreBtnContainer.style.display = "none";
+      }
+    }
+  }
+
+  projectBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      projectBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      currentProjectFilter = btn.getAttribute("data-category");
+      currentProjectLimit = 6; // Reset limit when filter changes
+      renderProjects();
+    });
+  });
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      currentProjectLimit += 6;
+      renderProjects();
+    });
+  }
+
+  // Initial render
+  renderProjects();
+
+  // ==========================================
   // 8. 3D TILT EFFECT ON PROJECT CARDS
   // ==========================================
   const tiltCards = document.querySelectorAll(".project-card, .service-card");
